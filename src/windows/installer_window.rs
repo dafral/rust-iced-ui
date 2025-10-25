@@ -1,4 +1,4 @@
-use iced::widget::{text_input, image, column, Column};
+use iced::widget::{text_input, column, Column, image};
 
 #[derive(Default)]
 pub struct Installer {
@@ -8,6 +8,7 @@ pub struct Installer {
 impl Installer {
     pub fn view(&self) -> Column<InstallerMessage> {
         column![
+            image("assets/dog.jpg"),
             text_input("Path to install", &self.path).on_input(InstallerMessage::SetPath),
         ]
     }
